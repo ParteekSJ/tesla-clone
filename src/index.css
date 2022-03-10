@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .headerLink {
+    @apply uppercase text-black font-semibold text-[16px];
+  }
+
+  .headerLinkInverted {
+    @apply text-white font-[500] uppercase z-0 text-[16px];
+  }
+
+  .headerBlockButton {
+    @apply cursor-pointer w-[260px] pt-[12px] pb-[12px] rounded-[50px] uppercase bg-indigo-50 font-[700] outline-none;
+  }
+
+  .buttonPrimary {
+    @apply bg-[#3e6ae1] hover:bg-[#3457b1] py-[10px] px-[40px] rounded-[50px] text-white uppercase font-[600] cursor-pointer outline-none transition-all ease-in-out duration-100;
+  }
+
+  .buttonSecondary {
+    @apply bg-transparent border-[3px] border-[#171a20] w-full py-[10px] px-[40px] rounded-[50px] uppercase text-[#171a20] font-[600] cursor-pointer transition-all ease-in-out duration-100 outline-none hover:bg-[#171a20] hover:text-[white];
+  }
+
+  .accountLink {
+    @apply text-[#393c41] text-[17px] capitalize hover:text-black hover:font-[600] transition-all ease-in-out cursor-pointer;
+  }
 }
